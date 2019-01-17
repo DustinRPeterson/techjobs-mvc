@@ -34,9 +34,14 @@
         <input type="submit" value="Search" />
     </form>
 
-    <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <!-- name,employer,location,position type,core competency -->
+    <table th:each="job: ${jobs}" class="job-listing">
+        <tr th:each="fields: ${job}">
+            <td th:text="${fields.key} + ' : ' + ${fields.value}"></td>
+        </tr>
+    </table>
 
 </div>
 
